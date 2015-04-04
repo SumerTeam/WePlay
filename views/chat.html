@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>小群聊</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="javascripts/chat.js"></script>
+</head>
+<body>
+    <div id="messages">
+        <h4>新消息</h4>
+        <span id="status">Connecting...</span>
+        <fieldset>
+            <textarea id="input" class="textarea" name="textfield" rows="1"></textarea>
+            <button id="submit">发送</button>
+        </fieldset>
+    </div>
+    <div id="content"> <!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->
+
+    </div>
+</body>
+</html>
