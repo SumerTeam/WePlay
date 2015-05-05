@@ -5,6 +5,8 @@
 exports.action = function (req, res) {
     try {
         var command = req.param('command');
+        console.log("command=>", command);
+        console.log("this[command]", this[command]);
         if (command && this[command]) {
             this[command](req, function (response) {
                 res.send(response);

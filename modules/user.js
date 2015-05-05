@@ -2,7 +2,7 @@
  * Created by liusifei on 15/5/5.
  */
 var mongoose = require('mongoose');
-var Schema = mongoose.schema;
+var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
     loginName: {type: String, required: true},
@@ -10,7 +10,7 @@ var userSchema = new Schema({
     sex: {type: String, default: '0'},
     nickName: {type: String, default: ''},
     createTime: {type: Date, default: Date.now()}
-}, {collection: 'user'});
+});
 
 mongoose.model('user', userSchema);
 
