@@ -10,7 +10,6 @@ var userSchema = new Schema({
     sex: {type: String, default: '0'},
     nickName: {type: String, default: ''},
     createTime: {type: Date, default: Date.now()}
-});
+}, {collection: 'user'});
 
-mongoose.model('user', userSchema);
-
+var userModel = mongoose.model('user', userSchema);

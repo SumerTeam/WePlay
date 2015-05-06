@@ -5,8 +5,6 @@
 exports.action = function (req, res) {
     try {
         var command = req.param('command');
-        console.log("command=>", command);
-        console.log("this[command]", this[command]);
         if (command && this[command]) {
             this[command](req, function (response) {
                 res.send(response);
@@ -20,7 +18,7 @@ exports.action = function (req, res) {
 };
 
 //注册
-var register = require('../lib/register').register;
+register = require('../lib/register').register;
 
 //登录
-var login = require('../lib/login').login;
+login = require('../lib/login').login;
