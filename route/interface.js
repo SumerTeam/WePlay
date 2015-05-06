@@ -22,3 +22,6 @@ register = require('../lib/register').register;
 
 //登录
 login = require('../lib/login').login;
+
+//添加好友
+addFriend = require();

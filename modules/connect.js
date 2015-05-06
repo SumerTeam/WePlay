@@ -5,5 +5,7 @@ var mongoose = require('mongoose');
 var passpoadDB = mongoose.createConnection('mongodb://localhost/user');
 
 require('./user');
-
 exports.user = passpoadDB.model('user');
+
+require('./friend');
+exports.friend = passpoadDB.model('friend');
