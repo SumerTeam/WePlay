@@ -101,6 +101,10 @@ app.get('/', function (req, res) {
     res.sendfile('views/chat.html');
 });
 
+//验证token
+app.all('*', function (req, res, next) {
+});
+
 //路由跳转
 app.all('/action', interface.action);
 
