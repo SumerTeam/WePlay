@@ -8,6 +8,7 @@ var express = require('express')
     , favicon = require('serve-favicon')
     , body = require('body-parser')
     , interface = require('./route/interface')
+    , checkToken = require('./route/checkToken')
     , methodOverride = require('metho' +
         'd-override')
     , errorHandler = require('errorHandler');
@@ -103,6 +104,7 @@ app.get('/', function (req, res) {
 
 //验证token
 app.all('*', function (req, res, next) {
+    checkToken.checkToken(req, res, next);
 });
 
 //路由跳转

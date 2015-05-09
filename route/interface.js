@@ -5,6 +5,7 @@
 exports.action = function (req, res) {
     try {
         var command = req.param('command');
+        console.log("command=>", command);
         if (command && this[command]) {
             this[command](req, function (response) {
                 res.send(response);
@@ -24,4 +25,4 @@ register = require('../lib/register').register;
 login = require('../lib/login').login;
 
 //添加好友
-addFriend = require();
+//addFriend = require();
