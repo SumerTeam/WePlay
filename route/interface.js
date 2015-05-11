@@ -24,5 +24,8 @@ register = require('../lib/register').register;
 //登录
 login = require('../lib/login').login;
 
+//查看好友列表
+getFriendList = require('../lib/friend').getFriendList;
+
 //添加好友
-//addFriend = require();
+addFriend = require('../lib/friend').addFriend;
