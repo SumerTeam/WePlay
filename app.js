@@ -11,7 +11,8 @@ var express = require('express')
     , checkToken = require('./route/checkToken')
     , methodOverride = require('metho' +
         'd-override')
-    , errorHandler = require('errorHandler');
+    , errorHandler = require('errorHandler')
+    , url = require('url');
 
 //设置日志级别
 io.set('log level', 1);
@@ -105,6 +106,14 @@ app.get('/', function (req, res) {
 //验证token
 app.all('*', function (req, res, next) {
     checkToken.checkToken(req, res, next);
+});
+
+//静态页面
+app.all('/interface', function (req, res) {
+    //console.log("url", url.parse(req.url, true).path.split('?')[1]);
+    //console.log("path=>", path.join(__dirname, './views/' + url.parse(req.url, true).path.split('?')[1]));
+    //res.sendfile(path.join(__dirname, './views/' + url.parse(req.url, true).path.split('?')[1]));
+    res.sendfile('./views/login.html');
 });
 
 //路由跳转
